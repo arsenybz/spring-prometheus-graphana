@@ -13,3 +13,7 @@ scrape_configs:
       - targets: [ 'host.docker.internal:8001' ]
         labels:
           app: 'spring-with-prometheus-grafana'
+  - job_name: 'postgres'
+    scrape_interval: 5s
+    static_configs:
+      - targets: [ 'host.docker.internal:9187' ]
